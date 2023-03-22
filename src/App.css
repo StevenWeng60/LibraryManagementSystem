@@ -1,38 +1,65 @@
-.App {
+body {
+  background: #834200;
+}
+
+.SiteHeading {
+  padding: .5em;
+  font-size: 3em;
+  color:white;
+  text-shadow: 2px 2px #000000;
+}
+
+/* .SearchBar encompasses the whole search bar: dropdown menu, input field, and search button*/
+.SearchBar {
+  margin: auto;
   text-align: center;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.DropDownMenu {
+  width:10%;
+  position:relative;
+  display:inline-block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dropdownbtn {
+  background: white;
+  width:100%;
+  border: 3px solid black;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dropdownbtn:hover, .searchBTN:hover {
+  cursor:pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.dropdowncontent > a{
+  display:block;
+  background:white;
+  width:100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropdowncontent {
+  position:absolute;
+  visibility:hidden;
+  width:100%;
+}
+
+input[type=text]{
+  padding: 1em;
+  font-size: 1em;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-bottom: 3px solid black;
+  border-right: none;
+  margin:auto;
+  width: 60%;
+}
+
+.searchBTN {
+  padding: 1em;
+  font-size:1em;
+  border: 3px solid black;
+  width: 10%;
 }
