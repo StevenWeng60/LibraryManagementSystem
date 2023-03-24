@@ -1,49 +1,32 @@
 import './App.css';
-import GetData from './REST';
-import { useRef, useState } from 'react';
+import Home from'./Home';
+import About from './About';
+
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
 
 function App() {
-  // Hooks
-  const [dropdownvisibility, setdvisibility] = useState(false);
-  const dropdownv = useRef(null)
+  // Router will take care of all routes in our program
+  // We have a temporary nav bar in place
 
-  // Event handlers
-  const handleDClick = event => {
-    if (dropdownvisibility){
-      dropdownv.current.style.visibility = "visible";
-      console.log('asdf')
-    }
-    else {
-      dropdownv.current.style.visibility = "hidden";
-      console.log('asdaf')
-    }
-    setdvisibility(!dropdownvisibility);
-  }
-/*
+  // Home.js contains search bar
   return (
-    <div>
-      <div className="SiteHeading">
-        Library Management System
+    <Router>
+      <div className="App">
+        <ul className="App-header">  
+          <li>  
+            <Link to="/">Home</Link>  
+          </li>  
+          <li>  
+            <Link to="/about">About Us</Link>  
+          </li>  
+          </ul> 
+      <Routes>
+        <Route exact path='/' element = {< Home/>}></Route>
+        <Route exact path='/about' element = {< About/>}></Route>
+      </Routes>
       </div>
-      <div className="SearchBar">
-        <div className="DropDownMenu">
-          <div className="dropdownbtn" onClick={handleDClick}>All</div>
-          <div className="dropdowncontent" ref= {dropdownv}>
-            <a href="#">Title</a>
-            <a href="#">Author</a>
-            <a href="#">Genre</a>
-          </div>
-        </div>
-        <input type="text" placeholder="Search...">
-        </input>
-        <button type="submit" className="searchBTN"><i className="fa fa-search"></i></button>
-      </div>
-      <GetData/>
-    </div>
-  );
-  */
-  return (
-    <GetData/>
+    </Router>
   );
 }
 
